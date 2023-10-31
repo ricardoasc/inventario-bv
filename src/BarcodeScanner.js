@@ -22,7 +22,7 @@ const BarcodeScanner = () => {
         updatedItems[existingItemIndex].quantity += 1;
         setInventoryItems(updatedItems);
       } else {
-        const newItem = { code: value, quantity: 1 };
+        const newItem = { code: value, quantity: 1, date: new Date() };
         setInventoryItems([...inventoryItems, newItem]);
       }
 

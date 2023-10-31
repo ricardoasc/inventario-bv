@@ -66,6 +66,11 @@ const App = () => {
   };
 
   const handleDeleteInventory = async (id) => {
+    const shouldSave = window.confirm(
+      "¿Estás seguro que deseas borrar el inventario?"
+    );
+
+    if (!shouldSave) return;
     await db.collection("inventories").doc(id).delete();
     window.location.reload();
   };
